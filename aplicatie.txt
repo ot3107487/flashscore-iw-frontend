@@ -1,5 +1,6 @@
 ceva 
 
+cand deschizi, apare logo ada sda asd asda asd
 categorii doar fotbal + tenis
 la fotbal, apare lista de meciuri live
 cand dai click pe meci apare scorul pe reprize
