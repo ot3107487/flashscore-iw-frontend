@@ -1,4 +1,5 @@
-cand deschizi, apare logo
+ceva 
+
 categorii doar fotbal + tenis
 la fotbal, apare lista de meciuri live
 cand dai click pe meci apare scorul pe reprize
