@@ -1,0 +1,70 @@
+const { FORMERR } = require('dns');
+const { readFileSync, writeFileSync } = require('fs');
+jsonFile = './students.json';
+let students = [];
+let data = '';
+
+try {
+    data = readFileSync(jsonFile).toString();
+}
+catch (err) {
+    console.log(err);
+}
+
+
+const add = (id, firstName, lastName, university) => {
+    let currentStudents = read();
+    currentStudents.push({
+        id: id,
+        firstName: firstName,
+        lastName: lastName,
+        university: university
+    });
+    writeFileSync(jsonFile, JSON.stringify(currentStudents));
+}
+
+const remove = (id) => {
+    let currentStudents = read();
+    for (let student of currentStudents) {
+        if (student.id === id) {
+            currentStudents.splice(currentStudents.indexOf(student), 1);
+        }
+    }
+    writeFileSync(jsonFile, JSON.stringify(currentStudents));
+}
+
+const findOne = (id) => {
+    return read().filter((student) => student.id === id)[0];
+}
+
+const read = () => {
+    lines = JSON.parse(data);
+    lines.forEach(student => students.push(student));
+    return students;
+}
+
+const update = (id, firstName, lastName, university) => {
+    let currentStudents = read();
+    for (let student of currentStudents) {
+        if (student.id === id) {
+            let updated = {
+                id: id,
+                firstName: firstName,
+                lastName: lastName,
+                university: university
+            };
+            let foundIndex = currentStudents.indexOf(student);
+            currentStudents.splice(foundIndex, 1);
+            currentStudents.splice(foundIndex, 0, updated);
+        }
+    }
+    writeFileSync(jsonFile, JSON.stringify(currentStudents));
+}
+
+module.exports = {
+    read: read,
+    save: add,
+    delete: remove,
+    findOne: findOne,
+    update: update
+}
