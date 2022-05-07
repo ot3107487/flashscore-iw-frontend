@@ -12,5 +12,9 @@ export class DataService {
   getAllLigues() {
     return this.http.get(`${this.url}/League`);
   }
+  
+  getAllCountries() {
+    return this.http.get(`${this.url}/Country`);
+  }
 
 }

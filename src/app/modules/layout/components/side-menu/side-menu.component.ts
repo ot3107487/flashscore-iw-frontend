@@ -8,13 +8,16 @@ import { DataService } from '../../services/data.service';
 })
 export class SideMenuComponent implements OnInit {
   leagues: any[] = [];
+  countries: any[] = [];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.dataService.getAllLigues().subscribe((data: any) => {
-      this.leagues = data;
-      console.log(data);
+    this.dataService.getAllLigues().subscribe((/*JSON.parse(response.body)*/bundle: any) => {
+      this.leagues = bundle.entry.map((entry: any) => entry.resource);
+    })
+    this.dataService.getAllCountries().subscribe((/*JSON.parse(response.body)*/bundle: any) => {
+      this.countries = bundle.entry.map((entry: any) => entry.resource);
     })
   }
 
