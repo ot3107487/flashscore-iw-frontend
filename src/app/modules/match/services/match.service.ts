@@ -5,16 +5,13 @@ import { url } from 'src/app/utils';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class MatchService {
+
   constructor(private http: HttpClient) { }
 
 
-  getAllLigues() {
-    return this.http.get(`${url}/League`);
-  }
-  
-  getAllCountries() {
-    return this.http.get(`${url}/Country`);
+  getAllMatches() {
+    return this.http.get(`${url}/Match`);
   }
 
 }

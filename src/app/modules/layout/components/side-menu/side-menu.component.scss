@@ -1,4 +1,33 @@
 ul {
     list-style: none;
     margin: 0;
+    padding: 0;
 }
+.left_menu_text{
+    color: #aaa;
+    font-size: 17px;
+    width:inherit;
+    height: 21px;
+    background-color: inherit;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .left_menu_flag{
+  background-size: 19px 20px;
+  height: 19px;
+  width:19px;
+  margin-right: 8px;
+  display: inline-block;
+  }
+  li a:hover {
+    background-color: #555;
+    color: white;
+  }
+  li a {
+    display: block;
+    color: #000;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px;
+  }

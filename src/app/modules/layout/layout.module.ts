@@ -8,6 +8,8 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { ContentComponent } from './components/content/content.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.service';
+import { MatchListComponent } from '../match/components/match-list/match-list.component';
+import { MatchModule } from '../match/match.module';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { DataService } from './services/data.service';
   imports: [
     LayoutRoutingModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    MatchModule
   ],
   exports: [
     HeaderComponent
