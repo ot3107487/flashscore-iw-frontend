@@ -3,9 +3,22 @@
         <div id="left">
         </div>
         <div id="center">
-            <app-header></app-header>
-            <app-side-menu></app-side-menu>
-            <app-content></app-content>
+            <div id="header">
+                <app-header></app-header>
+
+            </div>
+            <div id="main-content">
+                <div id="side-menu">
+                    <app-side-menu></app-side-menu>
+                </div>
+                <div id="matches">
+                    <app-content></app-content>
+                    <app-side-menu></app-side-menu>
+                </div>
+                <div id="ads">
+                    <app-side-menu></app-side-menu>
+                </div>
+            </div>
         </div>
         <div id="right">
 
