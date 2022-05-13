@@ -13,5 +13,8 @@ export class MatchService {
   getAllMatches() {
     return this.http.get(`${url}/Match`);
   }
+  getMatchesByLeague(league:number){
+    return this.http.get(`${url}/Match?_league=${league}`);
+  }
 
 }
