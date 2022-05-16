@@ -3,18 +3,25 @@ import { Injectable } from '@angular/core';
 import { url } from 'src/app/utils';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MatchService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  getMatches(params: any) {
+    let queryString = [];
+    if ('count' in params) {
+      queryString.push(`_count=${params.count}`);
+    }
+    if ('page' in params) {
+      queryString.push(`_page=${params.page}`);
+    }
+    if ('league' in params) {
+      queryString.push(`league=${params.league}`);
+    }
 
-
-  getAllMatches() {
-    return this.http.get(`${url}/Match`);
+    return this.http.get(
+      `${url}/Match${queryString.length ? `?${queryString.join('&')}` : ''}`
+    );
   }
-  getMatchesByLeague(league:number){
-    return this.http.get(`${url}/Match?_league=${league}`);
-  }
-
 }

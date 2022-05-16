@@ -1,2 +1,5 @@
 <p>content works!</p>
-<app-match-list [matches]="matches" ></app-match-list>
+<div *ngFor="let league of leagueData">
+  {{ league.league.name }}
+  <app-match-list [matches]="league.matches"> </app-match-list>
+</div>
