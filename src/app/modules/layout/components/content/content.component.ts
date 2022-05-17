@@ -16,22 +16,47 @@ export class ContentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loadLeagues(1, 50);
+  }
+
+  loadLeagues(page: number, count: number): void {
     this.dataService
-      .getAllLigues()
+      .getAllLigues({ page: page, count: count })
       .subscribe((/*JSON.parse(response.body)*/ bundle: any) => {
         console.log(bundle);
-        this.leagueData = bundle.entry.map((entry: any) => ({
-          league: entry.resource,
-          matches: [],
-        }));
+        this.leagueData.push(
+          ...bundle.entry.map((entry: any) => ({
+            league: entry.resource,
+            matches: [],
+          }))
+        );
 
         for (let league of this.leagueData) {
-          this.matchService
-            .getMatches({ league: league.league.id })
-            .subscribe((/*JSON.parse(response.body)*/ bundle: any) => {
-              league.matches = bundle.entry.map((entry: any) => entry.resource);
-            });
+          const date = new Date();
+          date.setHours(0, 0, 0, 0);
+          this.loadMatches(1, 10, league, date);
         }
+
+        if (this.leagueData.length >= bundle.total) return;
+
+        this.loadLeagues(page + 1, count);
+      });
+  }
+
+  loadMatches(page: number, count: number, league: any, date: Date) {
+    this.matchService
+      .getMatches({
+        league: league.league.id,
+        page: page,
+        count: count,
+        date: date.toISOString(),
+      })
+      .subscribe((/*JSON.parse(response.body)*/ bundle: any) => {
+        league.matches.push(
+          ...bundle.entry.map((entry: any) => entry.resource)
+        );
+        if (league.matches.length >= bundle.total) return;
+        this.loadMatches(page + 1, count, league, date);
       });
   }
 }

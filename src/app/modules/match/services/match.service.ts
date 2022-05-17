@@ -19,6 +19,9 @@ export class MatchService {
     if ('league' in params) {
       queryString.push(`league=${params.league}`);
     }
+    if ('date' in params) {
+      queryString.push(`date=${params.date}`);
+    }
 
     return this.http.get(
       `${url}/Match${queryString.length ? `?${queryString.join('&')}` : ''}`
