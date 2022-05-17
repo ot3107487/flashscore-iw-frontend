@@ -24,18 +24,18 @@ export class ContentComponent implements OnInit {
       .getAllLigues({ page: page, count: count })
       .subscribe((/*JSON.parse(response.body)*/ bundle: any) => {
         console.log(bundle);
-        this.leagueData.push(
-          ...bundle.entry.map((entry: any) => ({
-            league: entry.resource,
-            matches: [],
-          }))
-        );
+        let newLeagues = bundle.entry.map((entry: any) => ({
+          league: entry.resource,
+          matches: [],
+        }));
 
-        for (let league of this.leagueData) {
+        for (let league of newLeagues) {
           const date = new Date();
           date.setHours(0, 0, 0, 0);
           this.loadMatches(1, 10, league, date);
         }
+
+        this.leagueData.push(...newLeagues);
 
         if (this.leagueData.length >= bundle.total) return;
 
