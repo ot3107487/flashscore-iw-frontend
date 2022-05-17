@@ -1,0 +1,43 @@
+.match_card{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid white;
+    border-radius: 5px;
+    height: 75px;
+    background-color: var(--light-dark-blue);
+}
+
+.match_card:hover{
+    background-color: var(--hover-grey);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.data_card{
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 0;
+    border: 0;
+    height: inherit;   
+    float: left;
+}
+
+.data_card p{
+    margin-top: 30px;
+    color: var(--light-grey);
+}
+
+.teams_card{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: inherit;
+    float: left;
+}
+
+.teams_card p{
+    margin-top: 10px;
+    color: var(--light-grey);
+}

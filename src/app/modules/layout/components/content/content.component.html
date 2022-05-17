@@ -1,5 +1,10 @@
-<p>content works!</p>
 <div *ngFor="let league of leagueData">
-  {{ league.league.name }}
-  <app-match-list [matches]="league.matches"> </app-match-list>
+  <div class="league_header">
+    <p> 
+      {{ league.league.name }} 
+      <i class="expand_button arrow" (click)="expand(league)" [ngClass]="{'up':league.showMatches, 'down':!league.showMatches}"></i>
+      
+    </p>
+  </div>
+  <app-match-list *ngIf="league.showMatches" [matches]="league.matches"> </app-match-list>
 </div>

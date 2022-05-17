@@ -27,6 +27,7 @@ export class ContentComponent implements OnInit {
         let newLeagues = bundle.entry.map((entry: any) => ({
           league: entry.resource,
           matches: [],
+          showMatches: true
         }));
 
         for (let league of newLeagues) {
@@ -58,5 +59,9 @@ export class ContentComponent implements OnInit {
         if (league.matches.length >= bundle.total) return;
         this.loadMatches(page + 1, count, league, date);
       });
+  }
+
+  expand(league: any){
+    league.showMatches=!league.showMatches
   }
 }

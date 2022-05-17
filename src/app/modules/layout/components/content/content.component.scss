@@ -1,0 +1,37 @@
+.league_header{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--dark-blue);
+}
+
+.league_header p{
+    margin: 3px 0px 3px 15px;
+    color: var(--yellow);
+    padding: 0;
+    border: 0;
+}
+
+.expand_button{
+    padding: 0;
+    margin: 5px 10px 0px 0px;
+    float: right;
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}

@@ -8,13 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MatchItemComponent implements OnInit {
   @Input() match: any;
 
-  matchDisplay: string = '';
+  matchDisplay:any = {};
 
   constructor() {}
 
   ngOnInit(): void {
-    this.matchDisplay = `${this.match.home.display.split('|')[0]} - ${
-      this.match.away.display.split('|')[0]
-    }`;
+    this.matchDisplay.home = `${this.match.home.display.split('|')[0]}`;
+    this.matchDisplay.away = `${this.match.away.display.split('|')[0]}`;
   }
 }

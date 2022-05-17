@@ -1,3 +1,9 @@
-<p>match-item works!</p>
-{{ matchDisplay }}
-{{ match.date | date }}
+<div class="match_card">
+    <span class="data_card">
+        <p>{{ match.date | date: 'HH:mm' }}</p>
+    </span>
+    <span class="teams_card">
+        <p>{{ matchDisplay.home }}</p>
+        <p>{{ matchDisplay.away }}</p>
+    </span>
+</div>
