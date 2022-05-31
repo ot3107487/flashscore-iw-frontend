@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MatchService } from 'src/app/modules/match/services/match.service';
-import { DataService } from '../../services/data.service';
+import { DataService } from '../../../layout/services/data.service';
 
 @Component({
   selector: 'app-content',
@@ -12,11 +13,15 @@ export class ContentComponent implements OnInit {
 
   constructor(
     private matchService: MatchService,
-    private dataService: DataService
+    private dataService: DataService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.loadLeagues(1, 50);
+    this.route.queryParams.subscribe(params => {
+      console.log(params);
+    });
   }
 
   loadLeagues(page: number, count: number): void {

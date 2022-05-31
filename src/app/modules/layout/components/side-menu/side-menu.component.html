@@ -1,13 +1,9 @@
 Ligi
 <ul>
-    <li *ngFor="let leauge of leagues" >
-        {{leauge.name}}
-    </li>
-    <li *ngFor="let leauge of leagues" >
-        {{leauge.name}}
-    </li>
-    <li *ngFor="let leauge of leagues" >
-        {{leauge.name}}
+    <li *ngFor="let league of leagues" >
+        <a class="left_menu" href="#">
+            <span class="left_menu_text">{{league.name}}</span>
+          </a>
     </li>
 </ul>
 <br>
@@ -19,34 +15,5 @@ Tari
             <span class="left_menu_text">{{country.name}}</span>
           </a>
     </li>
-    <li *ngFor="let country of countries" >
-        <a class="left_menu" href="#">
-            <img class="left_menu_flag" src="../../../../../assets/{{country.flag}}">
-            <span class="left_menu_text">{{country.name}}</span>
-          </a>
-    </li>
-    <li *ngFor="let country of countries" >
-        <a class="left_menu" href="#">
-            <img class="left_menu_flag" src="../../../../../assets/{{country.flag}}">
-            <span class="left_menu_text">{{country.name}}</span>
-          </a>
-    </li>
-    <li *ngFor="let country of countries" >
-        <a class="left_menu" href="#">
-            <img class="left_menu_flag" src="../../../../../assets/{{country.flag}}">
-            <span class="left_menu_text">{{country.name}}</span>
-          </a>
-    </li>
-    <li *ngFor="let country of countries" >
-        <a class="left_menu" href="#">
-            <img class="left_menu_flag" src="../../../../../assets/{{country.flag}}">
-            <span class="left_menu_text">{{country.name}}</span>
-          </a>
-    </li>
-    <li *ngFor="let country of countries" >
-        <a class="left_menu" href="#">
-            <img class="left_menu_flag" src="../../../../../assets/{{country.flag}}">
-            <span class="left_menu_text">{{country.name}}</span>
-          </a>
-    </li>
+
 </ul>

@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './components/layout.component';
 
 const routes: Routes = [
-    { path: '', component: LayoutComponent }
+    { path: '', component: LayoutComponent, children: [
+      {path: '', loadChildren: () => import('../league/league.module').then(m => m.LeagueModule)}
+    ] }
 ];
 
 @NgModule({
