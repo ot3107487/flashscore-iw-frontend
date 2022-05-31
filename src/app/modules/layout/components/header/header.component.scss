@@ -1,0 +1,107 @@
+.header_content {
+    background-color:  var(--dark-blue);
+    width: inherit;
+    height: 100px;
+    padding: 5px;
+    margin: 0;
+    border: 0;
+}
+
+.header_logo {
+    display: table-cell;
+    vertical-align: middle;
+    float: left;
+    padding-top: 34px;
+    width: 125px;
+    height: 30px;
+}
+
+.button_search {
+    background-color: #19343D;
+    border-radius: 8px;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: 500ms;
+    width: 40px;
+    height: 40px;
+    margin-right: 7px;
+}
+
+img.button_icon_menu {
+    height: 20px;
+    width: 20px;
+    float: left;
+    padding: 4.5px;
+}
+
+img.button_icon_login {
+    padding: 8px;
+    height: 20px;
+    width: 20px;
+    float: left;
+}
+
+img.button_icon_search {
+    padding: 4px;
+    height: 20px;
+    width: 20px;
+    float: left;
+}
+
+.button_menu {
+    background-color: #19343D;
+    border-radius: 8px;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: 0.3;
+    transition: 500ms;
+    width: 40px;
+    height: 40px;
+    margin-right: 7px;
+}
+
+button.button_menu:hover {
+    background-color: #001218;
+}
+
+button.button_login {
+    background-color: #19343D;
+    border-radius: 8px;
+    width: 35px;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: 500ms;
+    width: 90px;
+    height: 40px;
+    margin-right: 7px;
+}
+button.button_login:hover {
+    background-color: #001218;
+}
+
+p.log_in {
+    color: white;
+    font-size: 11px;
+    float: right;
+    font-weight: bold;
+    padding: 2px;
+    float: right;
+}
+
+div.space_div {
+    background-color: #001e28;
+    width: 100px;
+    height: 40px;
+}
+div.buttons_container{
+    float: right;
+    vertical-align: middle;
+    padding: 25px;
+}
+
+button.button_search:hover {
+    background-color: #001218;
+}

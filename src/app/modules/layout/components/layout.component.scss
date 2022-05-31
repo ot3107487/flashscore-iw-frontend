@@ -13,8 +13,11 @@
 }
 
 #center {
-    background-color: red;
+    background-color: var(--dark-blue);
     width: 70%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
 }
 
 #right {
@@ -37,8 +40,10 @@
 }
 
 #header {
-    padding: 30px;
     text-align: center;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
 }
 
 #main-content{
