@@ -23,6 +23,10 @@ export class MatchService {
       queryString.push(`date=${params.date}`);
     }
 
+    if ('include' in params) {
+      queryString.push(`_include=${params.include}`);
+    }
+
     return this.http.get(
       `${url}/Match${queryString.length ? `?${queryString.join('&')}` : ''}`
     );

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MatchService } from 'src/app/modules/match/services/match.service';
 
 @Component({
   selector: 'app-league',
@@ -9,14 +10,42 @@ import { ActivatedRoute } from '@angular/router';
 export class LeagueComponent implements OnInit {
   league: any;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private matchService: MatchService) {
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      console.log(params);
+      this.league = {
+        league: {id: params.get('id')},
+        matches: []
+      };
+      const date = new Date();
+      date.setHours(0, 0, 0, 0);
+      this.loadMatches(1,10,this.league, date)
     });
+  }
 
+  loadMatches(page: number, count: number, league: any, date: Date) {
+    this.matchService
+      .getMatches({
+        league: league.league.id,
+        page: page,
+        count: count,
+        date: date.toISOString(),
+        include: 'league'
+      })
+      .subscribe((bundle: any) => {
+        league.matches.push(
+          ...bundle.entry.filter((entry:any) => entry.resource.resourceType === 'Match')
+          .map((entry: any) => entry.resource)
+        );
+        if (league.matches.length >= bundle.total) {
+          this.league.league = bundle.entry.find((entry:any) => entry.resource.resourceType === 'League').resource;
+          return;
+        };
+        this.loadMatches(page + 1, count, league, date);
+      });
   }
 
 }

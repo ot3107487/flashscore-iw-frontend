@@ -1,9 +1,7 @@
 Ligi
 <ul>
     <li *ngFor="let league of leagues" >
-        <a class="left_menu" href="#">
-            <span class="left_menu_text">{{league.name}}</span>
-          </a>
+            <span (click)="navigateToLeague(league.id)" class="left_menu_text">{{league.name}}</span>
     </li>
 </ul>
 <br>
