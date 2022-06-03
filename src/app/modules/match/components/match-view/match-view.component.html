@@ -1,0 +1,28 @@
+
+<div id="match-view-container">
+    <div id="close-bar">
+        <p id="x-button" (click)="closeView()">x</p>
+    </div>
+    <div id="home-team">
+        <img id="home-team-img" src="../../../../../assets/{{matchDisplay.homeSign}}" alt="">
+        <p id="home-team-name">{{ matchDisplay.home }}</p>
+    </div>
+    <div id="score-container">
+        <p id="match-date">{{ match.date | date: 'dd/MM/yyyy HH:mm' }}</p>
+        <div id="score">
+            <div class="text-container">
+                <p id="home-score">0</p>
+            </div>
+            <div class="text-container">
+                <p id="score-separator">-</p>
+            </div>
+            <div class="text-container">
+                <p id="guest-score">0</p>
+            </div>
+        </div>
+    </div>
+    <div id="guest-team">"'
+        <img id="guest-team-img" src="../../../../../assets/{{matchDisplay.awaySign}}" alt="">
+        <p id="guest-team-name">{{ matchDisplay.away }}</p>
+    </div>
+</div>

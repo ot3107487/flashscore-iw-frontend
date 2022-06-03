@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatchService } from '../../services/match.service';
 
 @Component({
@@ -9,11 +9,21 @@ import { MatchService } from '../../services/match.service';
 export class MatchListComponent implements OnInit {
 
   @Input() matches: any[] = [];
+  @Output() matchOutput = new EventEmitter();
+  match: any;
 
   constructor(private matchService: MatchService) { }
 
   ngOnInit(): void {
+  }
 
+  selectMatch(match: any){
+    this.match=match;
+    this.matchOutput.emit(this.match);
+  }
+
+  getMatch(){
+    return this.match;
   }
 
 }

@@ -1,0 +1,125 @@
+#match-view-container{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    height: 220px;
+    width: 100%;
+    background-color: #001e28;
+}
+
+#home-team{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+
+#score-container{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 33.33%;
+    float: left;
+}
+
+#guest-team{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 33.33%;
+    float: right;
+    text-align: center;
+}
+
+#guest-team-img{
+    margin-top: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+#home-team-img{
+    margin-top: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+#home-team-name{
+    color: bisque;
+}
+
+#guest-team-name{
+    color: bisque;
+}
+
+#match-date{
+    text-align: center;
+    color: bisque;
+    font-size: 20px;
+
+}
+
+#home-score{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: 40px;
+}
+
+#score-separator{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: 40px;
+
+}
+
+#guest-score{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: 40px;
+}
+
+#score{
+    color: bisque;
+    height: 60px;
+}
+
+.text-container{
+    float: left;
+    width: 33.33%;
+    height: 33.33%;
+}
+
+#x-button{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    color: bisque;
+    font-size: 20px;
+    float: right;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+#x-button:hover {
+    background-color: #001218;
+}
+
+#close-bar{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    height: 20px;
+    width: 100%;
+}

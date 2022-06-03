@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { url } from 'src/app/utils';
+import { MatchItemComponent } from '../components/match-item/match-item.component';
+import { MatchListComponent } from '../components/match-list/match-list.component';
+import { MatchViewComponent } from '../components/match-view/match-view.component';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +21,7 @@ export class MatchService {
     }
     if ('league' in params) {
       queryString.push(`league=${params.league}`);
-    }
+    } 
     if ('date' in params) {
       queryString.push(`date=${params.date}`);
     }
@@ -26,6 +29,12 @@ export class MatchService {
     if ('include' in params) {
       queryString.push(`_include=${params.include}`);
     }
+    if('revinclude' in params) {
+      console.log(`${params.revinclude}`);
+      queryString.push(`_revinclude=${params.revinclude}`);
+    }
+    
+
 
     return this.http.get(
       `${url}/Match${queryString.length ? `?${queryString.join('&')}` : ''}`

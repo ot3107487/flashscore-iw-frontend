@@ -10,6 +10,9 @@ import { DataService } from '../../../layout/services/data.service';
 })
 export class ContentComponent implements OnInit {
   leagueData: any[] = [];
+  matchToDisplay: any;
+  displayMatch=0;
+  displayList=1;
 
   constructor(
     private matchService: MatchService,
@@ -56,10 +59,11 @@ export class ContentComponent implements OnInit {
         page: page,
         count: count,
         date: date.toISOString(),
+        revinclude: 'match_event'
       })
       .subscribe((/*JSON.parse(response.body)*/ bundle: any) => {
         league.matches.push(
-          ...bundle.entry.map((entry: any) => entry.resource)
+          ...bundle.entry.map((entry: any) => entry.resource).filter((entry: any) => entry.resourceType==='Match')
         );
         if (league.matches.length >= bundle.total) return;
         this.loadMatches(page + 1, count, league, date);
@@ -68,5 +72,14 @@ export class ContentComponent implements OnInit {
 
   expand(league: any){
     league.showMatches=!league.showMatches
+  }
+
+  displayListMatchSwitch(){
+    [this.displayList, this.displayMatch] = [this.displayMatch, this.displayList];
+  }
+
+  selectMatchToDisplay(match: any){
+    this.matchToDisplay=match;
+    console.log(match);
   }
 }

@@ -1,2 +1,2 @@
-<app-match-item [match]="match" *ngFor="let match of matches">
+<app-match-item [match]="match" (click)="selectMatch(match)" *ngFor="let match of matches">
 </app-match-item>

@@ -1,3 +1,4 @@
+<div *ngIf="displayList">
 <div *ngFor="let league of leagueData">
   <div class="league_header">
     <p> 
@@ -6,5 +7,7 @@
       
     </p>
   </div>
-  <app-match-list *ngIf="league.showMatches" [matches]="league.matches"> </app-match-list>
+  <app-match-list (matchOutput)="selectMatchToDisplay($event)" (matchOutput)="displayListMatchSwitch()"  *ngIf="league.showMatches" [matches]="league.matches"> </app-match-list>
 </div>
+</div>
+<app-match-view *ngIf="displayMatch" (closeViewEmitter)="displayListMatchSwitch()" [match]="matchToDisplay"></app-match-view>
