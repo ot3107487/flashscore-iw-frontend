@@ -25,4 +25,18 @@
         <img id="guest-team-img" src="../../../../../assets/{{matchDisplay.awaySign}}" alt="">
         <p id="guest-team-name">{{ matchDisplay.away }}</p>
     </div>
+    <div>
+        <div id="eventCard" *ngFor="let event of match.events">
+            <div class="home" *ngIf="isForHomeTeam(event)">
+                {{ event.code.display }}
+                {{ event.time }}
+                {{ event.player.display }}
+            </div>
+            <div class="away" *ngIf="!isForHomeTeam(event)">
+                {{ event.code.display }}
+                {{ event.time }}
+                {{ event.player.display }}
+            </div>
+        </div>
+    </div>
 </div>

@@ -10,6 +10,7 @@ import { MatchService } from '../../services/match.service';
 export class MatchViewComponent implements OnInit {
 
   matchDisplay:any = {};
+  events:any = [];
 
   @Input() match: any;
   @Output() closeViewEmitter = new EventEmitter();
@@ -23,11 +24,23 @@ export class MatchViewComponent implements OnInit {
     this.matchDisplay.awaySign = `${this.match.away.display.split('|')[1]}`;
     console.log(this.matchDisplay.homeSign);
     console.log(this.matchDisplay.awaySign);
+    this.events=this.match.events;
+    console.log(this.events);
     //src\assets\fcsb.png
   }
 
   closeView(){
     this.closeViewEmitter.emit();
   }
+
+  isForHomeTeam(event: any){
+    return event.player.team.reference.split('/')[1]===this.match.home.reference.split('/')[1];
+  }
+
+  isForAwayTeam(event: any){
+    return event.player.team.reference.split('/')[1]!==this.match.home.reference.split('/')[1];
+  }
+
+
 
 }
