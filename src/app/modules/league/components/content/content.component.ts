@@ -65,6 +65,15 @@ export class ContentComponent implements OnInit {
         league.matches.push(
           ...bundle.entry.map((entry: any) => entry.resource).filter((entry: any) => entry.resourceType==='Match')
         );
+        for(let i in league.matches)
+        { league.matches[i].events=[];
+          league.matches[i].events.push(
+            ...bundle.entry
+            .map((entry: any) => entry.resource)
+            .filter((entry: any) => entry.resourceType==='MatchEvent'&& entry.match.reference.split('/')[1]===league.matches[i].id)
+          );
+        }
+        console.log(league.matches);
         if (league.matches.length >= bundle.total) return;
         this.loadMatches(page + 1, count, league, date);
       });
