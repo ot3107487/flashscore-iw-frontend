@@ -28,14 +28,14 @@
     <div>
         <div id="eventCard" *ngFor="let event of match.events">
             <div class="home" *ngIf="isForHomeTeam(event)">
+                {{ event.time }}'
                 {{ event.code.display }}
-                {{ event.time }}
                 {{ event.player.display }}
             </div>
             <div class="away" *ngIf="isForAwayTeam(event)">
-                {{ event.code.display }}
-                {{ event.time }}
                 {{ event.player.display }}
+                {{ event.code.display }}
+                {{ event.time }}'
             </div>
         </div>
     </div>

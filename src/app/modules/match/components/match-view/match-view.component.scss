@@ -125,11 +125,25 @@
 }
 
 .home{
+    padding: 0px;
+    padding-left: 10px;
+    border: 0px;
+    margin: 0px;
+    height: 30px;
+    width: 100%;
     float: left;
     color: red;
+    text-align: left;
 }
 
 .away{
+    padding: 0px;
+    padding-right: 10px;
+    border: 0px;
+    margin: 0px;
+    height: 30px;
+    width: 100%;
     float: right;
     color: white;
+    text-align: right;
 }
