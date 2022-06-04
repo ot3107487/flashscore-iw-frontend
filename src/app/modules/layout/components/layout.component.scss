@@ -51,7 +51,7 @@
     margin: 0;
     border: 0;
     width: 100%;
-    background-color: yellow;
+    background-color: #001218;
     display: flex;
 }
 
@@ -62,7 +62,7 @@
     float: left;
     width: 20%;
     height: 100%;
-    background-color: aqua;
+    background-color: #001218;
 }
 
 #matches{
@@ -82,4 +82,8 @@
     background-color: purple;
     float: right;
     width: 20%;
+}
+
+#container{
+    background-color: #1a3138
 }
