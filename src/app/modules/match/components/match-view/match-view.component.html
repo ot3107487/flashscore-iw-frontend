@@ -32,7 +32,7 @@
                 {{ event.time }}
                 {{ event.player.display }}
             </div>
-            <div class="away" *ngIf="!isForHomeTeam(event)">
+            <div class="away" *ngIf="isForAwayTeam(event)">
                 {{ event.code.display }}
                 {{ event.time }}
                 {{ event.player.display }}

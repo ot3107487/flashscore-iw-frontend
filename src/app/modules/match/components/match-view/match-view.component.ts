@@ -34,11 +34,17 @@ export class MatchViewComponent implements OnInit {
   }
 
   isForHomeTeam(event: any){
-    return event.player.team.reference.split('/')[1]===this.match.home.reference.split('/')[1];
+    console.log(event.player.team.reference.split('/')[1]);
+    console.log(this.match.home.reference.split('/')[1]);
+    console.log((event.player.team.reference.split('/')[1]===this.match.home.reference.split('/')[1]));
+    return (event.player.team.reference.split('/')[1]===this.match.home.reference.split('/')[1]);
   }
 
   isForAwayTeam(event: any){
-    return event.player.team.reference.split('/')[1]!==this.match.home.reference.split('/')[1];
+    console.log(event.player.team.reference.split('/')[1]);
+    console.log(this.match.home.reference.split('/')[1]);
+    console.log((event.player.team.reference.split('/')[1]===this.match.away.reference.split('/')[1]));
+    return (event.player.team.reference.split('/')[1]===this.match.away.reference.split('/')[1]);
   }
 
 
