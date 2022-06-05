@@ -11,13 +11,13 @@
         <p id="match-date">{{ match.date | date: 'dd/MM/yyyy HH:mm' }}</p>
         <div id="score">
             <div class="text-container">
-                <p id="home-score">0</p>
+                <p id="home-score">{{ this.scoreHomeTeam }}</p>
             </div>
             <div class="text-container">
                 <p id="score-separator">-</p>
             </div>
             <div class="text-container">
-                <p id="guest-score">0</p>
+                <p id="guest-score">{{ scoreAwayTeam }}</p>
             </div>
         </div>
     </div>
