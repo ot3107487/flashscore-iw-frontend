@@ -22,10 +22,17 @@ export class MatchViewComponent implements OnInit {
     this.matchDisplay.away = `${this.match.away.display.split('|')[0]}`;
     this.matchDisplay.homeSign = `${this.match.home.display.split('|')[1]}`;
     this.matchDisplay.awaySign = `${this.match.away.display.split('|')[1]}`;
-    console.log(this.matchDisplay.homeSign);
-    console.log(this.matchDisplay.awaySign);
-    this.events=this.match.events;
-    console.log(this.events);
+    this.match.events=this.match.events.sort((event1:any,event2:any) => {
+      if (event1.time > event2.time) {
+          return 1;
+      }
+  
+      if (event1.time < event2.time) {
+          return -1;
+      }
+      return 0;
+  });
+    console.log(this.match.events);
     //src\assets\fcsb.png
   }
 
@@ -34,16 +41,10 @@ export class MatchViewComponent implements OnInit {
   }
 
   isForHomeTeam(event: any){
-    console.log(event.player.team.reference.split('/')[1]);
-    console.log(this.match.home.reference.split('/')[1]);
-    console.log((event.player.team.reference.split('/')[1]===this.match.home.reference.split('/')[1]));
     return (event.player.team.reference.split('/')[1]===this.match.home.reference.split('/')[1]);
   }
 
   isForAwayTeam(event: any){
-    console.log(event.player.team.reference.split('/')[1]);
-    console.log(this.match.home.reference.split('/')[1]);
-    console.log((event.player.team.reference.split('/')[1]===this.match.away.reference.split('/')[1]));
     return (event.player.team.reference.split('/')[1]===this.match.away.reference.split('/')[1]);
   }
 

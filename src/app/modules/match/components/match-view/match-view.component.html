@@ -30,11 +30,13 @@
             <div class="home" *ngIf="isForHomeTeam(event)">
                 {{ event.time }}'
                 {{ event.code.display }}
+                <img class="event-icon" src="../../../../../assets/{{event.code.display }}.png" alt="">
                 {{ event.player.display }}
             </div>
             <div class="away" *ngIf="isForAwayTeam(event)">
                 {{ event.player.display }}
                 {{ event.code.display }}
+                <img class="event-icon" src="../../../../../assets/{{event.code.display}}.png" alt="">
                 {{ event.time }}'
             </div>
         </div>
