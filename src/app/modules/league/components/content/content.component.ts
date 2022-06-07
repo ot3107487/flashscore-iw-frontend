@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatchService } from 'src/app/modules/match/services/match.service';
 import { DataService } from '../../../layout/services/data.service';
 
@@ -17,7 +17,8 @@ export class ContentComponent implements OnInit {
   constructor(
     private matchService: MatchService,
     private dataService: DataService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
