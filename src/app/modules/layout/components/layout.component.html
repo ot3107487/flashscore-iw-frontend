@@ -1,30 +1,23 @@
 <div id="container">
-    <div id="top">
-        <div id="left">
+  <div id="top">
+    <div id="left"></div>
+    <div id="center">
+      <div id="header">
+        <app-header></app-header>
+      </div>
+      <div id="main-content">
+        <div id="side-menu">
+          <app-side-menu></app-side-menu>
         </div>
-        <div id="center">
-            <div id="header">
-                <app-header></app-header>
-
-            </div>
-            <div id="main-content">
-                <div id="side-menu">
-                    <app-side-menu></app-side-menu>
-                </div>
-                <div id="matches">
-                    <router-outlet></router-outlet>
-                </div>
-                <div id="ads">
-                    
-                </div>
-            </div>
+        <div id="matches">
+          <router-outlet></router-outlet>
         </div>
-        <div id="right">
-
-        </div>
+        <div id="ads"></div>
+      </div>
     </div>
-    <div id="footer">
-
-        <app-footer></app-footer>
-    </div>
+    <div id="right"></div>
+  </div>
+  <div id="footer">
+    <app-footer></app-footer>
+  </div>
 </div>

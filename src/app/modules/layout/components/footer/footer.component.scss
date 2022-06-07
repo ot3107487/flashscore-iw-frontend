@@ -1,0 +1,114 @@
+@import "~font-awesome/css/font-awesome.css";
+
+.row-colums {
+  display: flex;
+  margin-bottom: 300px;
+}
+
+.column {
+  height: 220px;
+  float: left;
+  width: 25%;
+}
+
+.column:first-child {
+  margin-left: 200px;
+  width: 45%;
+}
+
+.column:last-child {
+  margin-right: 200px;
+  width: 30%;
+}
+
+.column-2 {
+  float: left;
+  width: 50%;
+  height: auto;
+}
+
+h5 {
+  color: #555e61;
+}
+
+a {
+  display: block;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #001e28;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.fa {
+  align-content: center;
+  width: 5px;
+  height: 5px;
+  border-radius: 50% 50%;
+  padding: 8px 8px 8px 8px;
+  display: inline-block;
+}
+
+.fa-facebook {
+  color: var(--dark-blue);
+}
+
+.fa-instagram {
+  color: var(--dark-blue);
+}
+
+.images-store {
+  border-radius: 5px;
+  height: auto;
+  width: 94px;
+}
+
+.imagine-licenta {
+  display: inline-block;
+  height: 32px;
+  margin-right: 10px;
+  position: absolute;
+  margin-left: 30px;
+  top: 325px;
+}
+
+.text-licenta {
+  font-size: 13;
+  color: #555e61;
+  align-self: center;
+  display: inline;
+  position: absolute;
+  top: 328px;
+  left: 70px;
+}
+
+#corner {
+  background-color: black;
+  bottom: 0;
+  clip-path: polygon(170px 0, 100% 0, 100% 100%, 0 100%);
+  height: 100px;
+  position: absolute;
+  right: 0;
+  width: calc(45% - 170px);
+  top: 385px;
+}
+
+#corner-image {
+  align-items: center;
+  bottom: 0;
+  height: 238px;
+  justify-content: center;
+  position: absolute;
+  right: calc(50% - 700px);
+  width: 191px;
+  z-index: 1;
+  top: 190px;
+}
+
+.footer-child {
+  position: relative;
+  bottom: -89px;
+}

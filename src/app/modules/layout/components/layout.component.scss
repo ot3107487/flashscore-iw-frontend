@@ -1,89 +1,90 @@
-
 #top {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
 }
 
 #left {
-    float: left;
-    width: 15%;
+  float: left;
+  width: 15%;
 }
 
 #center {
-    background-color: var(--dark-blue);
-    width: 70%;
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
+  background-color: var(--dark-blue);
+  width: 70%;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
 }
 
 #right {
-    float: right;
-    width: 15%;
-}
-
-#footer {
-    width: 100%;
-    min-height: 200px;
-    background-color: pink;
+  float: right;
+  width: 15%;
 }
 
 #container {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    width: 100%;
-    display: grid;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  display: grid;
 }
 
 #header {
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
 }
 
-#main-content{
-    padding: 0;
-    margin: 0;
-    border: 0;
-    width: 100%;
-    background-color: #001218;
-    display: flex;
+#main-content {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  background-color: #001218;
+  display: flex;
 }
 
-#side-menu{
-    padding: 0;
-    margin: 0;
-    border: 0;
-    float: left;
-    width: 20%;
-    height: 100%;
-    background-color: #001218;
+#side-menu {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: #001218;
 }
 
-#matches{
-    padding: 0;
-    margin: 0;
-    border: 0;
-    height: 100%;
-    background-color: var(--light-dark-blue);
-    width: 60%;
+#matches {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height: 100%;
+  background-color: var(--light-dark-blue);
+  width: 60%;
 }
 
-#ads{
-    padding: 0;
-    margin: 0;
-    border: 0;
-    height: 100%;
-    background-color: purple;
-    float: right;
-    width: 20%;
+#ads {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height: 100%;
+  background-color: purple;
+  float: right;
+  width: 20%;
 }
 
-#container{
-    background-color: #1a3138
+#container {
+  background-color: #1a3138;
+}
+
+#footer {
+  background-color: var(--light-grey);
+  align-items: center;
+  align-self: center;
+  position: relative;
+  overflow: hidden;
 }
