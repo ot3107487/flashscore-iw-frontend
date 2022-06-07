@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatchService } from '../../services/match.service';
 
 @Component({
