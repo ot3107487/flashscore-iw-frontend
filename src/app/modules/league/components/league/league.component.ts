@@ -33,13 +33,22 @@ export class LeagueComponent implements OnInit {
         page: page,
         count: count,
         date: date.toISOString(),
-        include: 'league'
+        include: 'league',
+        revinclude: 'match_event'
       })
       .subscribe((bundle: any) => {
         league.matches.push(
           ...bundle.entry.filter((entry:any) => entry.resource.resourceType === 'Match')
           .map((entry: any) => entry.resource)
         );
+        for(let i in league.matches)
+        { league.matches[i].events=[];
+          league.matches[i].events.push(
+            ...bundle.entry
+            .map((entry: any) => entry.resource)
+            .filter((entry: any) => entry.resourceType==='MatchEvent'&& entry.match.reference.split('/')[1]===league.matches[i].id)
+          );
+        }
         if (league.matches.length >= bundle.total) {
           this.league.league = bundle.entry.find((entry:any) => entry.resource.resourceType === 'League').resource;
           return;
